@@ -45,7 +45,6 @@
           	['01',  10347],
           	['02',  9533],
           	['03',  13906]
-        	
         	]);
 
         	var options = {
@@ -60,7 +59,51 @@
       		}
     		</script>
 		
-		
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    		<script type="text/javascript">
+      		google.charts.load('current', {'packages':['corechart']});
+      		google.charts.setOnLoadCallback(drawChart);
+
+      		function drawChart() {
+        	var data = google.visualization.arrayToDataTable([
+          	['Hour', 'Riders'],
+          	['0', 1783],
+		['1', 1346],
+		['2', 870],
+		['3', 446],
+		['4', 419],
+		['5', 562],
+		['6', 1742],
+		['7', 4751],
+		['8', 6920],
+		['9', 6283],
+		['10', 5410],
+		['11', 7648],
+		['12', 10034],
+		['13', 9769],
+		['14', 8494],
+		['15', 8331],
+		['16', 9998],
+		['17', 11740],
+		['18', 10450],
+		['19', 7946],
+		['20', 5995],
+		['21', 4882],
+		['22', 3834],
+		['23', 2774]
+        	]);
+
+        	var options = {
+          	title: 'Riders By Month',
+          	curveType: 'function',
+          	legend: { position: 'bottom' }
+        	};
+
+        	var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        	chart.draw(data, options);
+      		}
+    		</script>
 		
 	</head>
 	<body>
@@ -81,6 +124,7 @@
 			<p>
 		
 			<div id="donutchart" style="width: 900px; height: 500px;"></div>		
+			<div id="curve_chart" style="width: 900px; height: 500px"></div>
 			<div id="curve_chart" style="width: 900px; height: 500px"></div>
 			
 			The most used start station was 3069. <br>
