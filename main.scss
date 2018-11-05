@@ -42,13 +42,23 @@ ul.posts li {
     list-style: none;
 }
 
-@for $i from 1 through 100 {
-  .percentage-#{$i}:after {
-    $value: ($i * 1%);
-    width: $value;
-  }
+.percentage:after {
+  content: "";
+  display: block;
+  background-color: #3d9970;
 }
-
+.percentage-31.13:after {
+  width: 31.13%;
+}
+.percentage-7.19:after {
+  width: 7.19%;
+}
+.percentage-61.34:after {
+  width: 61.34%;
+}
+.percentage-0.29:after {
+  width: 0.29%;
+}
 .percentage {
   background: repeating-linear-gradient(
     to right,
