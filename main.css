@@ -39,6 +39,8 @@ ul.posts {
 ul.posts li {
   list-style: none;
 }
+/*
+
 .percentage:after {
   content: "";
   display: block;
@@ -57,7 +59,7 @@ ul.posts li {
   width: 1%;
 }
 
-/*
+
 dl {
   display: flex;
   background-color: white;
