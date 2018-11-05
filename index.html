@@ -24,8 +24,44 @@
 
         	var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
         	chart.draw(data, options);
-      }
-    </script>
+      		}
+    		</script>
+		
+		
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    		<script type="text/javascript">
+      		google.charts.load('current', {'packages':['corechart']});
+      		google.charts.setOnLoadCallback(drawChart);
+
+      		function drawChart() {
+        	var data = google.visualization.arrayToDataTable([
+          	['Month', 'Riders'],
+          	['07',  11420],
+          	['08',  24153],
+          	['09',  19866],
+          	['10',  18159],
+		['11',  14430],	
+		['12',  10613],
+          	['01',  10347],
+          	['02',  9533],
+          	['03',  13906]
+        	
+        	]);
+
+        	var options = {
+          	title: 'Riders By Month',
+          	curveType: 'function',
+          	legend: { position: 'bottom' }
+        	};
+
+        	var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        	chart.draw(data, options);
+      		}
+    		</script>
+		
+		
+		
 	</head>
 	<body>
 		<nav>
@@ -45,7 +81,8 @@
 			<p>
 		
 			<div id="donutchart" style="width: 900px; height: 500px;"></div>		
-					
+			<div id="curve_chart" style="width: 900px; height: 500px"></div>
+			
 			The most used start station was 3069. <br>
 			The most used end station was 3005. <br>
 			The average distance travelled was 4895.506325107156 meters. <br>
